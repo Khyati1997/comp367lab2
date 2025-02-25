@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +6,18 @@
 </head>
 <body>
     <h1>
-        <% 
-            java.util.Calendar cal = java.util.Calendar.getInstance();
-            int hour = cal.get(java.util.Calendar.HOUR_OF_DAY);
+        <%
+            // Get the current hour
+            int hour = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY);
+            String greeting;
+
             if (hour < 12) {
-                out.print("Good morning, Khyati, Welcome to COMP367");
+                greeting = "Good morning, Khyati, Welcome to COMP367";
             } else {
-                out.print("Good afternoon, Khyati, Welcome to COMP367");
+                greeting = "Good afternoon, Khyati, Welcome to COMP367";
             }
+
+            out.print(greeting);
         %>
     </h1>
 </body>
